@@ -1,0 +1,115 @@
+//creating the 1st class with the name Date 
+
+package com.company;
+
+public class Date {
+    private int dd;
+    private int mm;
+    private int yy;
+
+    public Date(int dd, int mm, int yy) {
+        this.dd = dd;
+        this.mm = mm;
+        this.yy = yy;
+    }
+
+    public int getDd() {
+        return dd;
+    }
+
+    public void setDd(int dd) {
+        this.dd = dd;
+    }
+
+    public int getMm() {
+        return mm;
+    }
+
+    public void setMm(int mm) {
+        this.mm = mm;
+    }
+
+    public int getYy() {
+        return yy;
+    }
+
+    public void setYy(int yy) {
+        this.yy = yy;
+    }
+
+    public String toString(){
+        return "Date - " + dd + "/" + mm + "/" + yy;
+    }
+}
+
+
+//creating another class - Student within the same project
+
+public class Student {
+    private String name;
+    private int rollNo;
+    private String collegeName = "SSIPMT";
+    private Date d;
+
+    public Student(String name, int rollNo, String collegeName, Date d) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.collegeName = collegeName;
+        this.d = d;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getD() {
+        return d;
+    }
+
+    public void setD(Date d) {
+        this.d = d;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void wish(){
+        System.out.println("My student " + name + " was born on " +d);
+        System.out.println("Happy Birthday " +name);
+    }
+
+    public int calcAge(){
+        int currentYear = 2021;
+        return currentYear - d.getYy();
+    }
+}
+
+
+//creating 3rd class - Main 
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Rhea Jain", 01, "SSIPMT", new Date(01, 10, 2001));
+        s1.wish();
+        System.out.println("Her age is " + s1.calcAge() + " years.");
+    }
+}
